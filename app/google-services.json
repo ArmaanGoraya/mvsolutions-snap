@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "761749562542",
+    "firebase_url": "https://asts-mvsolutions-snap.firebaseio.com",
+    "project_id": "asts-mvsolutions-snap",
+    "storage_bucket": "asts-mvsolutions-snap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761749562542:android:00800ea8236ca0cfc5f93f",
+        "android_client_info": {
+          "package_name": "com.mvsolutions.snap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761749562542-917j0bhaeqlmofudagj900kdq9csmcqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAowVLvcY-mDlP_pNG-niWtvEIvq-zMvnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761749562542-917j0bhaeqlmofudagj900kdq9csmcqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

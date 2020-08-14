@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/HomeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/home_image_view_img"
+        android:layout_width="match_parent"
+        android:layout_height="496dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="410dp"
+        android:layout_height="495dp"
+        android:layout_alignLeft="@+id/home_image_view_img"
+        android:layout_alignTop="@+id/home_image_view_img"
+        android:layout_alignRight="@+id/home_image_view_img"
+        android:layout_alignBottom="@+id/home_image_view_img"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="Image will display here once captured"
+        android:textColor="#000000"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/detect_text_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="63dp"
+        android:background="#1835D1"
+        android:text="Detect Text"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+
+    <Button
+        android:id="@+id/capture_image_btn"
+        android:layout_width="401dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="149dp"
+        android:background="#1835D1"
+        android:text="Capture Image"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/pick_image_btn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@+id/detect_text_btn"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="13dp"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        android:text="Pick Photo"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="26dp" />-->
+</RelativeLayout>
