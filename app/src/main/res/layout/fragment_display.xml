@@ -30,8 +30,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="24dp"
-                android:text = "Select License Plate Number"
+                android:textSize="24sp"
+                android:text = "@string/LPTxtView"
                 />
 
         </LinearLayout>
