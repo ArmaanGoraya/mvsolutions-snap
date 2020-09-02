@@ -78,11 +78,9 @@ public class FinalFragment extends Fragment {
                         txt4.setText("Company Name: " + compName);
                         break;
                     case "UN":
-
-                        break;
+                        txt1.setText("Un-confirmed. Please close application and try again.");
                     case "NF":
-
-                        break;
+                        txt1.setText("Insurance not found for this vehicle.");
                 }
             }
 
