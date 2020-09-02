@@ -1,4 +1,4 @@
-package com.mvsolutions.snap.ui.home;
+package com.mvsolutions.snap.ui.homefragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -25,7 +25,7 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextDetector;
 import com.mvsolutions.snap.R;
-import com.mvsolutions.snap.ui.display.DisplayFragment;
+import com.mvsolutions.snap.ui.displayfragment.DisplayFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,23 +48,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull final LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
 
-        //View view = inflater.inflate(R.layout.fragment_home, container, false);
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         detectButton = root.findViewById(R.id.action_homeFragment_to_displayFragment2);
-        //detectButton.setOnClickListener((View.OnClickListener) this);
-
-        //return view;
 
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
-        //View v = inflater.inflate(R.layout.fragment_display, container, false);
         imageView = root.findViewById(R.id.home_image_view_img);
         textView = root.findViewById(R.id.textView);
         captureImageButton = root.findViewById(R.id.capture_image_btn);
         detectButton = root.findViewById(R.id.detect_text_btn);
-        //pickButton = root.findViewById(R.id.pick_image_btn);
-
 
         captureImageButton.setOnClickListener(new View.OnClickListener() {
 
@@ -73,12 +66,6 @@ public class HomeFragment extends Fragment {
                 captureImage();
             }
         });
-//        pickButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                pickImage();
-//            }
-//        });
         detectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,39 +114,34 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    private void detectTextFromImage() {
-        FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(imageBitmap);
-        FirebaseVisionTextDetector visionTextDetector = FirebaseVision.getInstance().getVisionTextDetector();
-        final ArrayList<String> textBlobs = new ArrayList<>();
-        visionTextDetector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-            @Override
-            public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                List<FirebaseVisionText.Block> textBlocks = firebaseVisionText.getBlocks();
+//    private void detectTextFromImage() {
+//        FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(imageBitmap);
+//        FirebaseVisionTextDetector visionTextDetector = FirebaseVision.getInstance().getVisionTextDetector();
+//        final ArrayList<String> textBlobs = new ArrayList<>();
+//        visionTextDetector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+//            @Override
+//            public void onSuccess(FirebaseVisionText firebaseVisionText) {
+//                List<FirebaseVisionText.Block> textBlocks = firebaseVisionText.getBlocks();
+//
+//                if (textBlocks.size() == 0) {
+//                    Toast.makeText(getContext(), "No Text Found", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    for (FirebaseVisionText.Block block : textBlocks) {
+//                        String text = block.getText();
+//
+//                        textBlobs.add(text);
+//                    }
+//                }
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+//                Log.d("Error", e.getMessage());
+//            }
+//        });
+//    }
 
-                if (textBlocks.size() == 0) {
-                    Toast.makeText(getContext(), "No Text Found", Toast.LENGTH_SHORT).show();
-                } else {
-                    for (FirebaseVisionText.Block block : textBlocks) {
-                        String text = block.getText();
-
-                        textBlobs.add(text);
-                    }
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
-                Log.d("Error", e.getMessage());
-            }
-        });
-    }
-
-    private void pickImage() {
-        Intent i = new Intent(
-                Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(i, RESULT_LOAD_IMAGE);
-    }
 
     private void captureImage() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

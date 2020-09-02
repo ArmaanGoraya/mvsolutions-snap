@@ -8,7 +8,7 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="406dp"
+        android:layout_width="410dp"
         android:layout_height="737dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 android:text = "@string/LPTxtView"
                 />
 

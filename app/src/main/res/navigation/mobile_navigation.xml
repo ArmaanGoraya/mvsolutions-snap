@@ -20,7 +20,7 @@
         app:navGraph="@navigation/mobile_navigation" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mvsolutions.snap.ui.home.HomeFragment"
+        android:name="com.mvsolutions.snap.ui.homefragment.HomeFragment"
         android:label="" >
         <action
             android:id="@+id/action_homeFragment_to_displayFragment2"
@@ -28,7 +28,25 @@
     </fragment>
     <fragment
         android:id="@+id/displayFragment"
-        android:name="com.mvsolutions.snap.ui.display.DisplayFragment"
-        android:label="" />
+        android:name="com.mvsolutions.snap.ui.displayfragment.DisplayFragment"
+        android:label="" >
+        <action
+            android:id="@+id/action_displayFragment_to_plateFragment"
+            app:destination="@id/plateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plateFragment"
+        android:name="com.mvsolutions.snap.ui.platefragment.PlateFragment"
+        android:label="fragment_plate"
+        tools:layout="@layout/fragment_plate" >
+        <action
+            android:id="@+id/action_plateFragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.mvsolutions.snap.ui.finalfragment.FinalFragment"
+        android:label="fragment_final"
+        tools:layout="@layout/fragment_final" />
 
 </navigation>
