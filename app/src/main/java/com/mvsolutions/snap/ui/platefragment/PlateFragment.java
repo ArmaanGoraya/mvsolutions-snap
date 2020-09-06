@@ -48,10 +48,6 @@ public class PlateFragment extends Fragment {
 
         TextView t1 = root.findViewById(R.id.t1);
         Spinner sp = (Spinner) root.findViewById(R.id.spinner1);
-        final Spinner spinner = new Spinner(getContext());
-        spinner.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        spinner.offsetLeftAndRight(40);
-        linearLayout.addView(spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.states, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(adapter);
